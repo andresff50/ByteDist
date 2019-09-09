@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% block outofthebox %}
+{% endblock %}
+<div class="container2">
+    {% block maincontent %}
+    {% endblock %}
+    <div class="row vertical-gap">
+        <div class="col-lg-8">
+            {% block basecontent %}
+            {% endblock %}
+        </div>
+        <div class="col-lg-4 hiddenitem">
+            <!--nk-sidebar-sticky-->
+            <aside class="nk-sidebar nk-sidebar-right">
+                <div class="desk-sidebar-noticias">
+                    <div class="nk-gap-2"></div>
+                    <div class="nk-widget-content">
+                        <a class="twitter-timeline" data-lang="es" data-width="330" data-height="890" data-theme="dark" href="https://twitter.com/offzoneoficial?ref_src=twsrc%5Etfw">Tweets by offzoneoficial</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </div>
+                    <div class="nk-gap-2"></div>
+                    <!--top 5-->
+                    <h2 class="nk-decorated-h-2 h4"><span>Tendencia</span></h2>
+                    {% for post in new_posts %}
+                        <div class="nk-blog-post">
+                            <h2 class="nk-post-title h5"><a href="{{ post.get_post_detail_url }}">{{ post.title }}</a></h2>
+                            <a href="{{ post.get_post_detail_url }}" class="nk-post-img">
+                                <img style="object-fit: fill;height: 180px;" src="/media/{{ post.image1 }}" alt="So saying he unbuckled">
+                            </a>
+                        </div>
+                    {% endfor %}
+                    <!-- end top 5-->
+                </div>
+            </aside>
+        </div>
+    </div>
+</div>
+{% block pagebottomcontent %}
+{% endblock %}
+
+{% endblock %}

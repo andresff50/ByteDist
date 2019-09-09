@@ -1,0 +1,62 @@
+{% extends 'sidebartemplate.html' %}
+{% load staticfiles %}
+
+{% block title %}bytedist | reviews{% endblock %}
+
+{% block maincontent %}
+<div class="nk-gap-2"></div>
+<div class="perp2">
+    <h2 class="nk-decorated-h-2 h3 miclasemod"><span>Reviews</span></h2>
+</div>
+<div class="nk-gap-2"></div>
+{% endblock %}
+
+{% block basecontent %}
+<div class="nk-tabs">
+    <div class="tab-content">
+        <div class="desk-noticias">
+            {% for rg in review_pag %}
+            <div class="nk-blog-post">
+                <a href="{{ rg.get_review_detail_detail_url }}" class="nk-post-img">
+                    <img style="object-fit: fill;height: 240px;" src="/media/{{ rg.image1 }}" alt="sa">
+                </a>
+                <div class="nk-gap-1"></div>
+                <div class="containermov">
+                    <h2 class="nk-post-title h4"><a href="{{ rg.get_review_detail_detail_url }}">{{ rg.title }}</a></h2>
+                    <div class="nk-post-text">
+                        {{ rg.content|safe|truncatechars:200 }}
+                    </div>
+                </div>
+            
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+     <!-- START: Pagination -->
+     <div class="nk-pagination nk-pagination-center">
+        {% if review_pag.has_previous %}
+        <a href="?page={{ review_pag.previous_page_number }}" class="nk-pagination-prev">
+            <span class="far fa-minus-square fa-lg"></span> Anterior
+        </a>
+        {% endif %}
+
+        {% if review_pag.has_previous or review_pag.has_next %}
+        <span>
+            {{ review_pag.number }} - {{ review_pag.paginator.num_pages }}
+        </span>
+        {% endif %}
+
+        {% if review_pag.has_next %}
+        <a href="?page={{ review_pag.next_page_number }}" class="nk-pagination-next">
+            Siguiente <span class="far fa-plus-square fa-lg"></span>
+        </a>
+        {% endif %}
+
+    </div>
+    <!-- END: Pagination -->
+
+</div>
+
+{% endblock %}

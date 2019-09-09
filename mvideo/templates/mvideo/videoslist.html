@@ -1,0 +1,50 @@
+{% extends 'sidebartemplate.html' %}
+{% block title %}bytedist | videos{% endblock %}
+
+{% block maincontent %}
+<div class="nk-gap-2"></div>
+<div class="perp">
+    <h2 class="nk-decorated-h-2 h3"><span>Videos</span></h2>
+</div>
+{% endblock %}
+
+{% block basecontent %}
+<div class="nk-gap-2"></div>
+<div class="nk-gap"></div>
+<div class="row vertical-gap">
+        {% for v in videos_news %}
+        <div class="col-md-6">
+            <div class="nk-blog-post">
+                <a href="{{ v.get_video_detail_url }}" class="nk-post-img">
+                    <img style="object-fit: cover;height: 180px;" src="/media/{{ v.thumbnail }}" alt="W">
+                </a>
+                <div class="nk-gap"></div>
+                <h2 class="nk-post-title h4"><a href="{{ v.get_video_detail_url }}">{{v.title}}</a></h2>
+            </div>
+        </div>
+        {% endfor %}
+</div>
+<!-- START: Pagination -->
+<div class="nk-pagination nk-pagination-center">
+    {% if videos_news.has_previous %}
+    <a href="?page={{ videos_news.previous_page_number }}" class="nk-pagination-prev">
+        <span class="far fa-minus-square fa-lg"></span> Anterior
+    </a>
+    {% endif %}
+
+    {% if videos_news.has_previous or videos_news.has_next %}
+    <span>
+        {{ videos_news.number }} - {{ videos_news.paginator.num_pages }}
+    </span>
+    {% endif %}
+
+    {% if videos_news.has_next %}
+    <a href="?page={{ videos_news.next_page_number }}" class="nk-pagination-next">
+        Siguiente <span class="far fa-plus-square fa-lg"></span>
+    </a>
+    {% endif %}
+
+</div>
+<!-- END: Pagination -->
+{% endblock %}
+

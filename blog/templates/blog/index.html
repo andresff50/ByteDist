@@ -1,0 +1,146 @@
+{% extends 'sidebartemplate.html' %}
+{% load staticfiles %}
+{% block title %}bytedist{% endblock %}
+{% block outofthebox %}
+<!-- START: Image Slider -->
+<div class="desktop-mode-slider hiddenitem">
+    <div class="nk-gap-7"></div>
+    <div class="nk-image-slider" data-autoplay="5000">
+        {% for post in postslider %}
+        <div class="nk-image-slider-item">
+            <img src="/media/{{ post.imageslider }}" alt="" class="nk-image-slider-img" data-thumb="/media/{{ post.imageslider }}">
+            <div class="nk-image-slider-content">
+                <h3 class="nk-post-title h4 h4-resp">
+                    <a href="{{ post.get_post_detail_url }}">{{ post.title }}</a>
+                </h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- END: Image Slider -->
+{% endblock %}
+
+{% block maincontent %}
+<div class="nk-gap-2"></div>
+<div class="perp">
+    <h2 class="nk-decorated-h-2"><span>Nuevas<span class="text-main-1"> Noticias</span></span></h2>
+</div>
+{% endblock %}
+
+
+{% block basecontent %}
+<div class="nk-tabs">
+    <div class="tab-content">
+        <div class="perp">        
+            <div class="nk-box-2">
+                {% for post in posts %}
+                <div class="nk-blog-post nk-blog-post-border-bottom">
+                    <div class="contenedor-post wide-overlay" style="background:{{post.colorhexa}};">
+                        <a href="{{ post.get_post_detail_url }}" class="nk-post-img2">
+                            <img class="banner1-img" src="/media/{{ post.image1 }}" alt="test">
+                        </a>
+                        <div class="text-encima">
+                            <h2 class="nk-post-title h3">{{ post.title }}</h2>
+                        </div>
+                    </div>
+                    <div class="hiddenitem">
+                        <div class="nk-post-text">
+                            <p>{{ post.content|safe|truncatechars:150 }}</p>
+                        </div>
+                        <div class="nk-post-date mt-10 mb-10">
+                                By {{ post.author }} | <span class="fa fa-calendar"></span> {{ post.published_date|date:"M d, Y" }}
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+            <!-- END: Action Tab -->
+        
+    </div>
+    <!-- START: Pagination -->
+    <div class="nk-gap-7"></div>
+    <div class="nk-pagination nk-pagination-center">
+        {% if posts.has_previous %}
+        <a href="?page={{ posts.previous_page_number }}" class="nk-pagination-prev">
+            <span class="far fa-minus-square fa-lg"></span> Anterior
+        </a>
+        {% endif %}
+
+        {% if posts.has_previous or posts.has_next %}
+        <span>
+            {{ posts.number }} - {{ posts.paginator.num_pages }}
+        </span>
+        {% endif %}
+
+        {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}" class="nk-pagination-next">
+            Siguiente <span class="far fa-plus-square fa-lg"></span>
+        </a>
+        {% endif %}
+
+    </div>
+    <!-- END: Pagination -->
+</div>
+{% endblock %}
+
+{% block pagebottomcontent %}
+
+<!--Noticias mas populares-->
+<div class="hiddenitem">
+    <div class="nk-gap-2"></div>
+    <div class="container2">
+        <div style="text-align: center;">
+            <h2 class="nk-post-title h2">Noticias Populares</h2>
+        </div>
+        <div class="nk-gap-2"></div>
+        <div class="nk-blog-grid">
+            <div class="row">
+                {% for pt4 in posttop4 %}
+                <div class="col-lg-4">
+                    <div class="nk-blog-post">
+                        <a href="{{ pt4.get_post_detail_url }}" class="nk-post-img">
+                            <img style="object-fit: fill;height: 180px;" src="/media/{{ pt4.image1 }}" alt="h">
+                        </a>
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="{{ pt4.get_post_detail_url }}">{{ pt4.title }}</a></h2>
+                        <div class="nk-post-text">
+                            <p>{{ pt4.content|safe|truncatechars:150 }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--End-->
+
+
+<!--videos populares-->
+<div class="hiddenitem">
+    <div class="container2">
+        <div style="text-align: center;">
+            <h2 class="nk-post-title h2">Videos Populares</h2>
+        </div>
+        <div class="nk-gap-2"></div>
+        <div class="nk-blog-grid">
+            <div class="row">
+                {% for vp4 in videostop4 %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="nk-blog-post">
+                        <a href="{{ vp4.get_video_detail_url }}" class="nk-post-img">
+                            <img style="object-fit: fill;height: 180px;" src="/media/{{ vp4.thumbnail }}" alt="W">
+                        </a>
+                        <div class="nk-gap"></div>
+                        <h2 class="nk-post-title h4"><a href="{{ vp4.get_video_detail_url }}">{{ vp4.title }}</a></h2>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<!--End-->
+{% endblock %}

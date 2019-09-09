@@ -1,0 +1,87 @@
+{% extends 'sidebartemplate.html' %}
+
+{% block title %}bytedist | Noticias{% endblock %}
+
+{% block maincontent %}
+<div class="nk-gap-2"></div>
+<div class="perp">
+    <h2 class="nk-decorated-h-2 h3"><span>Noticias</span></h2>
+</div>
+{% endblock %}
+
+{% block basecontent %}
+<div class="nk-tabs">
+    <div class="tab-content">
+        <div class="desk-noticias hiddenitem">
+            <div class="nk-gap-2"></div>
+            {% for post in posts %}
+            <div class="nk-blog-list">
+                <!-- START: Post -->
+                <div class="nk-blog-post">
+                    <div class="row vertical-gap">
+                        <div class="col-md-5 col-lg-6">
+                            <a href="{{ post.get_post_detail_url }}" class="nk-post-img">
+                                <img style="object-fit: cover;" src="/media/{{ post.image1 }}" alt="test">
+                            </a>
+                        </div>
+                        <div class="col-md-7 col-lg-6">
+                            <h2 class="nk-post-title h4"><a href="{{ post.get_post_detail_url }}">{{ post.title }}</a></h2>
+                            <div class="nk-post-text">
+                                <p>{{ post.content|safe|truncatechars:150 }}</p>
+                            </div>
+                            <div class="nk-post-date mt-10 mb-10">
+                                    by <a href="#">{{post.author}}</a> | <span class="fa fa-calendar"></span>{{ post.published_date|date:"M d, Y" }}
+                                    <!--<span class="fa fa-comments"></span> <a href="#">0 comments</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="mobil-noticias">
+            <!--mobil-widget-ver-->
+            <div class="nk-widget nk-widget-highlighted">
+                {% for post in posts %}
+                <div class="nk-widget-content">
+                    <div class="nk-widget-post">
+                        <a href="{{ post.get_post_detail_url }}" class="nk-post-image">
+                            <img src="/media/{{ post.image1 }}" alt="So saying he unbuckled">
+                        </a>
+                        <h3 class="nk-post-title"><a href="{{ post.get_post_detail_url }}">{{ post.title }}</a></h3>
+                        By {{ post.author }} | <span class="fa fa-calendar"></span> {{ post.published_date|date:"M d, Y" }}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        <!-- END: Action Tab -->
+        <div class="nk-gap"></div>
+    </div>
+
+    <!-- START: Pagination -->
+    <div class="nk-pagination nk-pagination-center">
+
+        {% if posts.has_previous %}
+        <a href="?page={{ posts.previous_page_number }}" class="nk-pagination-prev">
+            <span class="far fa-minus-square fa-lg"></span> Anterior
+        </a>
+        {% endif %}
+
+        {% if posts.has_previous or posts.has_next %}
+        <span>
+            {{ posts.number }} - {{ posts.paginator.num_pages }}
+        </span>
+        {% endif %}
+
+        {% if posts.has_next %}
+        <a href="?page={{ posts.next_page_number }}" class="nk-pagination-next">
+            Siguiente <span class="far fa-plus-square fa-lg"></span>
+        </a>
+        {% endif %}
+
+    </div>
+    <!-- END: Pagination -->
+</div>
+{% endblock %}

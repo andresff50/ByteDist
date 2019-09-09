@@ -1,0 +1,9 @@
+*.pyc
+*~
+__pycache__
+myvenv
+db.sqlite3
+/static
+/static2/assets/css/custom3.css
+/static2/assets/css/goodgames.css
+.DS_Store
