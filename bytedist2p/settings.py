@@ -95,20 +95,20 @@ CKEDITOR_CONFIGS = {
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'vmpndy4ioj84&s#9v@lqxj)#(8q5^cup#=74)=zommo#j#*=k&'
-#with open('/etc/secret_key.txt') as f:
-#    SECRET_KEY = f.read().strip()
+#SECRET_KEY = 'vmpndy4ioj84&s#9v@lqxj)#(8q5^cup#=74)=zommo#j#*=k&'
+with open('/etc/secret_key.txt') as f:
+    SECRET_KEY = f.read().strip()
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-#ALLOWED_HOSTS = ['bytedist.com', '165.22.2.236', 'www.bytedist.com']
+ALLOWED_HOSTS = ['bytedist.com', '159.89.48.41', 'www.bytedist.com']
 #ALLOWED_HOSTS = ['192.168.133.130', '127.0.0.1']
-ALLOWED_HOSTS = []
+#ALLOWED_HOSTS = ['159.89.48.41']
 SITE_ID = 1
 
 #disqus
-DISQUS_API_KEY = 'FOOBARFOOBARFOOBARFOOBARFOOBARF'
-DISQUS_WEBSITE_SHORTNAME = 'foobar'
+DISQUS_API_KEY = 'd4ehRLzwypHMQTNbDtNXYvXQI3EUpXAYY41uKsdnODFHiJzTe4PevuKHEddWaB1b'
+DISQUS_WEBSITE_SHORTNAME = 'bytedist'
 # Application definition
 
 INSTALLED_APPS = [
