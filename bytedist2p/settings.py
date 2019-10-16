@@ -101,9 +101,8 @@ with open('/etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['bytedist.com', '159.89.48.41', 'www.bytedist.com']
-#ALLOWED_HOSTS = ['192.168.133.130', '127.0.0.1']
-#ALLOWED_HOSTS = ['159.89.48.41']
+#ALLOWED_HOSTS = ['bytedist.com', '159.89.48.41', 'www.bytedist.com']
+ALLOWED_HOSTS = ['192.168.133.143', '127.0.0.1']
 SITE_ID = 1
 
 #disqus
@@ -122,9 +121,11 @@ INSTALLED_APPS = [
     'disqus',
     'blog',
     'mvideo',
+    'foroapp',
     'reviewsapp',
     'ckeditor',
     'ckeditor_uploader',
+    'informationapp',
 ]
 
 MIDDLEWARE = [
@@ -225,3 +226,11 @@ USE_TZ = True
 #MEDIA URL
 MEDIA_URL = '/media/'
 STATIC_URL = '/static/'
+
+#Email CONF
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'bytedist@gmail.com'
+EMAIL_HOST_PASSWORD = 'Kmar1998loeS'

@@ -15,7 +15,7 @@ def post_list(request):
     posts_all = Post.published_objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     new_posts = Post.published_objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:3]
     # set up pagination (6 posts per page)
-    paginator = Paginator(posts_all, 4)
+    paginator = Paginator(posts_all, 16)
     page = request.GET.get('page')
     categories = Category.objects.all().order_by('orden')
     try:
@@ -55,7 +55,7 @@ def postByCategory(request, slug):
         categoriObject = get_object_or_404(Category, slug=slug)
         posts_by_category = Post.published_objects.filter(categories__slug=slug, published_date__lte=timezone.now()).order_by('-published_date')
         # set up pagination (6 posts per page)
-        paginator = Paginator(posts_by_category, 4)
+        paginator = Paginator(posts_by_category, 16)
         page = request.GET.get('page')
         categories = Category.objects.all().order_by('orden')
         try:
@@ -85,7 +85,7 @@ def get_index(request):
     # Get all published posts
     posts_all = Post.published_objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     # set up pagination (6 posts per page)
-    paginator = Paginator(posts_all, 6)
+    paginator = Paginator(posts_all, 12)
     page = request.GET.get('page')
     categories = Category.objects.all().order_by('orden')
 

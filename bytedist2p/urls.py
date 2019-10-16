@@ -22,6 +22,8 @@ urlpatterns = [
     url(r'', include('blog.urls')),
     url(r'^videos/', include('mvideo.urls')),
     url(r'^reviews/', include('reviewsapp.urls')),
+    url(r'^foro/', include('foroapp.urls')),
+    url(r'^bytedist/', include('informationapp.urls')),
     url(r'^panel/admin/', admin.site.urls),
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

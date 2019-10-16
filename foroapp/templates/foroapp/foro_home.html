@@ -1,0 +1,83 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″ />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Foro</title>
+
+    <meta name="description" content="Bytedist - Bytedist communities, blog and games videojuegos" />
+    <meta name="keywords" content="game, foro, gaming, blog, news, videogames, videojuegos" />
+    <meta name="author" content="Bytedist" />
+
+
+    <link rel="icon" type="image/png" href="{% static 'assets/images/favicon2.png' %}" />
+    <!-- START: Styles -->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:400,700" rel="stylesheet"
+        type="text/css" />
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/dist/css/bootstrap.min.css' %}" />
+    <!-- GoodGames -->
+    <link rel="stylesheet" href="{% static 'assets/css/goodgames.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/forocount.min.css' %}" />
+    <!-- jQuery -->
+    <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="banner-foro">
+            <h2 class="h1">Foro</h1>
+            <h2 class="h2">Muy pronto</h2>
+        </div>
+        
+    </div>
+    <div class="container">
+        <div class="count-down-foro">
+            <div class="nk-countdown nk-countdown-center" data-end="2020-01-31 00:00" data-timezone="EST"></div>
+        </div>
+        <div class="nk-gap-2"></div>
+        <div class="center-element">
+            <h2 class="h2">
+                <a class="home-button" href="{% url 'index' %}">
+                    Regresar a Bytedist
+                </a>
+            </h2>
+        </div>
+    </div>
+    <div class="nk-gap-2"></div>
+    <div class="container">
+        <div class="row vertical-gap">
+            <div class="offset-lg-4 col-lg-4 offset-lg-4">
+                <div class="logo-box">
+                    <img src="{% static 'assets/images/Logo_parte_derecha.png' %}" alt="Bytedist footer right">
+                </div> 
+                <div class="logo-box2">
+                    <img src="{% static 'assets/images/Logo_parte_izquierda1.png' %}" alt="Bytedist footer right">
+                </div>    
+            </div>
+        </div>
+    </div>
+    
+
+
+
+    <!-- Jquery Validation -->
+    <script src="{% static 'assets/vendor/jquery-validation/dist/jquery.validate.min.js' %}"></script>
+
+
+    <!-- Jquery Countdown + Moment -->
+    <script src="{% static 'assets/vendor/jquery-countdown/dist/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment/min/moment.min.js' %}"></script>
+    <script src="{% static 'assets/vendor/moment-timezone/builds/moment-timezone-with-data.min.js' %}"></script>
+    <!-- GoodGames -->
+    <script src="{% static 'assets/js/goodgames.min.js' %}"></script>
+    <script src="{% static 'assets/js/goodgames-init.js' %}"></script>
+</body>
+
+</html>

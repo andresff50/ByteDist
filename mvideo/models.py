@@ -18,7 +18,6 @@ class News_video(models.Model):
     tags = models.ManyToManyField(Tag)
     video_url = models.CharField(max_length=400)
     thumbnail = models.ImageField(upload_to="images/thumbnailvideos", blank=True, null=True)
-    image1 = models.ImageField(upload_to="images/thumbnailvideos", blank=True, null=True)
     content = RichTextUploadingField()
     # identify when post was created
     created_date = models.DateTimeField(editable=False, default=timezone.now)

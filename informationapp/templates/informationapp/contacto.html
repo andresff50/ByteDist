@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row vertical-gap">
+        <div class="col-lg-12">
+            <div class="nk-gap-2"></div>
+            <h2 class="nk-decorated-h-4 h3"><span>Portal de contacto</span></h2>
+        </div>
+    </div>
+    <div class="row vertical-gap">
+        <div class="offset-lg-2 col-lg-8 offset-lg-2">
+            <div class="nk-gap-7"></div>
+            <h2 class="nk-post-title h2"><span>¡Hola!</span></h2>
+            <p style="font-size: 18px;">Te encuentras en el apartado de contacto del equipo de bytedist.com</p>
+            <div class="nk-gap-7"></div>
+
+            <p style="font-size: 16px;">Puedes escribirnos cuando lo necesites</p>
+            {% if submitted %}
+                <div class="nk-info-box text-success">
+                    <div class="nk-info-box-icon">
+                        <i class="ion-checkmark-round"></i>
+                    </div>
+                    <div class="nk-info-box-close nk-info-box-close-btn">
+                        <i class="ion-close-round"></i>
+                    </div>
+                    <h3>Solicitud completada! :)</h3>
+                    <em>Muchas gracias, tu mensaje ha sido enviado.</em>
+                </div>
+            {% else %}
+            <form method="post" class="nk-form-style-1">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <!--
+                <div class="row vertical-gap">
+                    <div class="col-md-12">
+                        <span>Nombre y apellidos o nombre de la empresa</span>
+                        <input type="text" class="form-control required" id="id_name" name="name" placeholder="Nombre">
+                    </div>
+                    <div class="col-md-12">
+                        <span>Correo electronico</span>
+                        <input type="email" class="form-control required" id="id_email" name="email" placeholder="Correo electronico">
+                    </div>
+                    <div class="col-md-12">
+                        <span>Motivo por el cual nos contactas</span>
+                        <input type="text" class="form-control required" id="ed_subject" name="subject" placeholder="Asunto">
+                    </div>
+                    <div class="col-md-12">
+                        <span>Resume tu historia</span>
+                        <textarea class="form-control required" name="message" id="id_message" rows="5" placeholder="Mensaje *"></textarea>
+                        <small>Esta informacion no sera indexada en nuestras bases de datos por lo cual a tu correo no te llegara spam de nosotros</small>
+
+                    </div>
+                    -->
+                    <div class="col-md-12" style="text-align: center;">
+                        <input class="nk-btn nk-btn-color-primary" type="submit" value="Enviar" />
+                    </div>
+                    
+                    
+                </div>
+            </form>
+            {% endif %}
+            
+        </div>
+    </div>
+</div>
+{% endblock %}

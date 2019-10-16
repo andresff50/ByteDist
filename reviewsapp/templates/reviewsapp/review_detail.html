@@ -15,7 +15,7 @@
 <div class="nk-blog-post nk-blog-post-single containermov">
 
     <div class="nk-post-text mt-0">
-        <h1 class="nk-post-title h2">{{ reviewDetail.title }}</h1>
+        <h1 class="nk-post-title h3">{{ reviewDetail.title }}</h1>
         <div class="nk-post-date mt-10 mb-10">
             by <a href="#">{{ reviewDetail.author }}</a> | <span class="fa fa-calendar"></span>{{ reviewDetail.published_date|date:"d/m/y H:i" }}
             <!--<span class="fa fa-comments"></span> <a href="#">0 comments</a>-->
@@ -24,7 +24,7 @@
     </div>
 
     <div class="nk-gap-2"></div>
-    <h3 class="nk-decorated-h-2"><span>Comentarios</span></h3>
+    <h3 class="nk-decorated-h-2 h3"><span>Comentarios</span></h3>
     <div class="nk-gap"></div>
     <div class="nk-comment">
         {% load disqus_tags %}

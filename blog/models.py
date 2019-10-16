@@ -60,6 +60,7 @@ class Post(models.Model):
     slug = models.SlugField(max_length=300, unique=True)
     colorhexa = models.CharField(max_length=8,blank=True, null=True)
     content = RichTextUploadingField()
+    resumen = models.CharField(max_length=150)
     # identify when post was created
     created_date = models.DateTimeField(editable=False, default=timezone.now)
     # set publish date initially to blank and null as drafts are allowed

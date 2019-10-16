@@ -1,33 +1,12 @@
 {% extends 'sidebartemplate.html' %}
 {% block title %}bytedist | {{ post.title }}{% endblock %}
-{% block head_css %}
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<meta property="og:url"           content="{{ request.get_full_path }}" />
-<meta property="og:type"          content="article" />
-<meta property="og:title"         content="{{ post.title }}" />
-<meta property="og:description"   content="{{ post.content|safe|truncatechars:80 }}" />
-<meta property="og:image"         content="https://off-zone.com/media/{{ post.image1 }}" />
-
-{% endblock %}
-
-{% block outofthebox %}
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<div class="nk-gap-1"></div>
-{% endblock %}
-
 {% block basecontent %}
+
 <div class="nk-blog-post nk-blog-post-single containermov">
     <!-- START: Post Text -->
+    <div class="nk-gap-2"></div>
     <div class="nk-post-text mt-0">
-        <h1 class="nk-post-title h2">{{ post.title }}</h1>
+        <h1 class="nk-post-title h3">{{ post.title }}</h1>
         <div class="nk-post-date mt-10 mb-10">
             by <a href="#">{{ post.author }}</a> | <span class="fa fa-calendar"></span>{{ post.published_date|date:"d/m/y H:i" }}
         </div>
@@ -35,24 +14,7 @@ fjs.parentNode.insertBefore(js, fjs);
         <div class="nk-post-img2">
             <img src="/media/{{ post.image1 }}" alt="test">
         </div>
-        <div class="nk-gap"></div>
         <p>{{ post.content|safe }}</p>
-
-        <div class="nk-gap"></div>
-        <div class="nk-post">
-            <span class="h5">Compartir:</span>
-            <ul class="nk-social-links">
-                <div class="nk-gap-1"></div>
-                <li>
-                    <div class="fb-share-button" data-href="{{ request.get_full_path }}" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
-                    
-                </li>
-                <div class="nk-gap-1"></div>
-                <li style="margin-left: 58px;">
-                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-text="{{ post.title }}" data-via="offzoneoficial" data-show-count="false"></a>
-                </li>
-            </ul>
-        </div>
     </div>
     <!-- END: Post Text -->
     <div class="nk-gap"></div>
@@ -60,7 +22,7 @@ fjs.parentNode.insertBefore(js, fjs);
     <div class="nk-gap"></div>
     <!--Similar articules-->
     <div class="nk-gap-2"></div>
-    <h3 class="nk-decorated-h-2"><span><span class="text-main-1">Articulos</span> Similares</span></h3>
+    <h3 class="nk-decorated-h-2 h3"><span><span class="text-main-1">Articulos</span> Similares</span></h3>
     <div class="row">
         {% for similarpost in post_similares %}
         <div class="col-md-6">
@@ -75,7 +37,7 @@ fjs.parentNode.insertBefore(js, fjs);
     </div>
     <!--end-->
     <div class="nk-gap-2"></div>
-    <h3 class="nk-decorated-h-2"><span>Comentarios</span></h3>
+    <h3 class="nk-decorated-h-2 h3"><span>Comentarios</span></h3>
     <div class="nk-gap"></div>
     <div class="nk-comment">
         {% load disqus_tags %}

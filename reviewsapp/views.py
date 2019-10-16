@@ -17,7 +17,7 @@ def reviewsList(request):
     new_posts = Post.published_objects.filter(published_date__lte=timezone.now()).order_by('-published_date')[:3]
     Review_all = Review.published_objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     categories = Category.objects.all().order_by('orden')
-    paginator = Paginator(Review_all, 6)
+    paginator = Paginator(Review_all, 12)
     page = request.GET.get('page')
     try:
         review_pag = paginator.page(page)
