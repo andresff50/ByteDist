@@ -21,7 +21,7 @@
                     <div class="row vertical-gap">
                         <div class="col-md-5 col-lg-6">
                             <a href="{{ post.get_post_detail_url }}" class="nk-post-img">
-                                <img style="object-fit: cover;" src="/media/{{ post.image1 }}" alt="test">
+                                <img style="object-fit: cover;" src="/media/{{ post.image1 }}" alt="Miniatura del post" />
                             </a>
                         </div>
                         <div class="col-md-7 col-lg-6">
@@ -46,7 +46,7 @@
                 <div class="nk-widget-content">
                     <div class="nk-widget-post">
                         <a href="{{ post.get_post_detail_url }}" class="nk-post-image">
-                            <img src="/media/{{ post.image1 }}" alt="So saying he unbuckled">
+                            <img src="/media/{{ post.image1 }}" alt="Miniatura del post" />
                         </a>
                         <h3 class="nk-post-title"><a href="{{ post.get_post_detail_url }}">{{ post.title }}</a></h3>
                         By {{ post.author }} | <span class="fa fa-calendar"></span> {{ post.published_date|date:"M d, Y" }}

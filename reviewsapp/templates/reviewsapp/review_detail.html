@@ -6,7 +6,7 @@
     <h2 class="nk-decorated-h-2 h3"><span>Reviews</span></h2>
 </div>
 <div class="nk-post-img2">
-    <img style="max-height: 440px;" src="/media/{{ reviewDetail.image2 }}" alt="test">
+    <img style="max-height: 440px;" src="/media/{{ reviewDetail.image2 }}" alt="Miniatura Review detalle" />
 </div>
 {% endblock %}
 
@@ -15,7 +15,7 @@
 <div class="nk-blog-post nk-blog-post-single containermov">
 
     <div class="nk-post-text mt-0">
-        <h1 class="nk-post-title h3">{{ reviewDetail.title }}</h1>
+        <h2 class="nk-post-title h3">{{ reviewDetail.title }}</h2>
         <div class="nk-post-date mt-10 mb-10">
             by <a href="#">{{ reviewDetail.author }}</a> | <span class="fa fa-calendar"></span>{{ reviewDetail.published_date|date:"d/m/y H:i" }}
             <!--<span class="fa fa-comments"></span> <a href="#">0 comments</a>-->

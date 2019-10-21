@@ -6,7 +6,7 @@
 <div class="nk-blog-post nk-blog-post-single containermov">
 
     <div class="nk-post-text mt-0">
-        <h1 class="nk-post-title h3">{{ videoDetail.title }}</h1>
+        <h2 class="nk-post-title h3">{{ videoDetail.title }}</h2>
         <div class="nk-post-date mt-10 mb-10">
             by <a href="#">{{ videoDetail.author }}</a> | <span class="fa fa-calendar"></span>{{ videoDetail.published_date|date:"d/m/y H:i" }}
         </div>
@@ -24,7 +24,7 @@
         <div class="col-md-6">
             <div class="nk-widget-post">
                 <a href="{{ similarvideos.get_video_detail_url }}" class="nk-post-image">
-                    <img style="object-fit: cover;" src="/media/{{ similarvideos.thumbnail }}" alt="ddsf">
+                    <img style="object-fit: cover;" src="/media/{{ similarvideos.thumbnail }}" alt="Miniatura video" />
                 </a>
                 <div class="nk-gap"></div>
                 <h3 class="nk-post-title"><a href="{{ similarvideos.get_video_detail_url }}">{{ similarvideos.title }}</a></h3>

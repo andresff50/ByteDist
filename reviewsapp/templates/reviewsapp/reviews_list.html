@@ -14,11 +14,12 @@
 {% block basecontent %}
 <div class="nk-tabs">
     <div class="tab-content">
-        <div class="desk-noticias">
+
+        <div class="desk-noticias hiddenitem">
             {% for rg in review_pag %}
             <div class="nk-blog-post">
                 <a href="{{ rg.get_review_detail_detail_url }}" class="nk-post-img">
-                    <img style="object-fit: fill;height: 240px;" src="/media/{{ rg.image1 }}" alt="sa">
+                    <img style="max-height: 440px;" src="/media/{{ rg.image2 }}" alt="Miniatura Review detalle" />
                 </a>
                 <div class="nk-gap-1"></div>
                 <div class="containermov">
@@ -31,7 +32,31 @@
             </div>
             {% endfor %}
         </div>
+
+
+        <div class="mobil-noticias">
+            <div class="nk-widget nk-widget-highlighted">
+                {% for rg in review_pag %}
+                <div class="nk-blog-post">
+                    <div class="nk-post-img2">
+                        <img style="max-height: 440px;" src="/media/{{ rg.image2 }}" alt="Miniatura Review detalle" />
+                    </div>
+                    <div class="nk-gap-1"></div>
+                    <div class="containermov">
+                        <h2 class="nk-post-title h4"><a href="{{ rg.get_review_detail_detail_url }}">{{ rg.title }}</a></h2>
+                        <div class="nk-post-text">
+                            {{ rg.resumen }}
+                        </div>
+                    </div>
+                
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
     </div>
+
+    
 
 
      <!-- START: Pagination -->

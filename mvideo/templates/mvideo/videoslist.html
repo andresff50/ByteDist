@@ -10,12 +10,12 @@
 
 {% block basecontent %}
 <div class="container3">
-    <div class="row vertical-gap">
+    <div class="row vertical-gap hiddenitem">
             {% for v in videos_news %}
             <div class="col-lg-6">
                 <div class="nk-blog-post">
                     <a href="{{ v.get_video_detail_url }}" class="nk-post-img">
-                        <img style="max-height: 180px;" src="/media/{{ v.thumbnail }}" alt="W">
+                        <img style="max-height: 180px;" src="/media/{{ v.thumbnail }}" alt="Miniatura video" />
                     </a>
                     <div class="nk-gap"></div>
                     <h2 class="nk-post-title h4"><a href="{{ v.get_video_detail_url }}">{{v.title}}</a></h2>
@@ -23,6 +23,23 @@
             </div>
             {% endfor %}
     </div>
+
+    <div class="mobil-noticias">
+        <div class="nk-widget nk-widget-highlighted">
+            {% for v in videos_news %}
+            <div class="nk-widget-content">
+                <div class="nk-widget-post">
+                    <a href="{{ v.get_video_detail_url }}" class="nk-post-image">
+                        <img src="/media/{{ v.thumbnail }}" alt="Miniatura del video" />
+                    </a>
+                    <h2 class="nk-post-title h4"><a href="{{ v.get_video_detail_url }}">{{v.title}}</a></h2>
+                    By {{ v.author }} | <span class="fa fa-calendar"></span> {{ v.published_date|date:"M d, Y" }}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
     <!-- START: Pagination -->
     <div class="nk-pagination nk-pagination-center">
         {% if videos_news.has_previous %}

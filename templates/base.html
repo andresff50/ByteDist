@@ -10,8 +10,8 @@
         {% block title %}{% endblock %}
     </title>
 
-    <meta name="description" content="Bytedist - Bytedist communities, blog and games videojuegos" />
-    <meta name="keywords" content="game, gaming, blog, news, videogames, videojuegos" />
+    <meta name="description" content="Bytedist - Bytedist Comunidad de videojuegos" />
+    <meta name="keywords" content="blog, news, videogames, videojuegos" />
     <meta name="author" content="Bytedist" />
 
 
@@ -42,9 +42,9 @@
 
     <!-- Seiyria Bootstrap Slider -->
     <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-slider/dist/css/bootstrap-slider.min.css' %}" />
-    <!-- GoodGames -->
+    <!-- Bytedist -->
     <link rel="stylesheet" href="{% static 'assets/css/goodgames.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'assets/css/custom3.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'assets/css/custom3.css' %}" />
 
     <!-- jQuery -->
     <script src="{% static 'assets/vendor/jquery/dist/jquery.min.js' %}"></script>
@@ -59,7 +59,7 @@
             <div class="container3">
                 <div class="nk-nav-table">
                     <a href="{% url 'index' %}" class="nk-nav-logo">
-                        <img src="{% static 'assets/images/logo.png' %}" alt="bytedistlogo" width="175">
+                        <img src="{% static 'assets/images/logo.png' %}" alt="bytedistlogo" width="175" />
                     </a>
 
                     <ul class="nk-nav nk-nav-right d-none d-lg-table-cell" data-nav-mobile="#nk-nav-mobile">
@@ -78,7 +78,6 @@
                         </li>
                         <li><a href="{% url 'videoslist' %}">Videos</a></li>
                         <li><a href="{% url 'reviewsList' %}">Reviews</a></li>
-                        <li><a href="{% url 'foroHome' %}">Foros</a></li>
                         <li>
                             <a href="#" data-toggle="modal" data-target="#modalSearch">
                                 <span class="fa fa-search"></span>
@@ -112,7 +111,7 @@
         <div class="nano">
             <div class="nano-content">
                 <a href="{% url 'index'%}" class="nk-nav-logo">
-                    <img src="{% static 'assets/images/logo.png' %}" alt="bytedist" width="120">
+                    <img src="{% static 'assets/images/logo.png' %}" alt="bytedist" width="120" />
                 </a>
                 <div class="nk-navbar-mobile-content">
                     <ul class="nk-nav">
@@ -160,7 +159,7 @@
                         <div class="col-lg-3">
                             <div class="logo-box">
                                 <a href="{% url 'indexInformation' %}">
-                                    <img src="{% static 'assets/images/Logo_parte_derecha.png' %}" alt="Bytedist footer left">
+                                    <img src="{% static 'assets/images/Logo_parte_derecha.png' %}" alt="Bytedist footer left" />
                                 </a>    
                             </div>    
                         </div>
@@ -174,7 +173,6 @@
                                     <li><a href="{% url 'post_list' %}">Noticias</a></li>
                                     <li><a href="{% url 'reviewsList' %}">Reviews</a></li>
                                     <li><a href="{% url 'videoslist' %}">Videos</a></li>
-                                    <li><a href="{% url 'foroHome' %}">Foro</a></li>
                                 </ul>
                             </div>
                             <div class="list-foo-2">
@@ -182,17 +180,15 @@
                                 <ul>
                                     <li><a href="{% url 'informacion' %}">Informacion</a></li>
                                     <li><a href="{% url 'politicas' %}">Politicas</a></li>
-                                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
-                                    <li><a href="{% url 'publicidad' %}">Publicidad</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="offset-lg-2 col-lg-3 hiddenitem">
                             <div class="logo-box2">
-                                <img src="{% static 'assets/images/Logo_parte_izquierda1.png' %}" alt="Bytedist footer right">
+                                <img src="{% static 'assets/images/Logo_parte_izquierda1.png' %}" alt="Bytedist footer right" />
                             </div> 
                             <div class="logo-box3">
-                                <img src="{% static 'assets/images/Logo_parte_izquierda2.png' %}" alt="Bytedist footer right">
+                                <img src="{% static 'assets/images/Logo_parte_izquierda2.png' %}" alt="Bytedist footer right" />
                             </div>    
                         </div>
                     </div>
@@ -263,16 +259,8 @@
     <!-- NanoSroller -->
     <script src="{% static 'assets/vendor/nanoscroller/bin/javascripts/jquery.nanoscroller.js' %}"></script>
 
-    <!-- SoundManager2 
-        <script src="{% static 'assets/vendor/soundmanager2/script/soundmanager2-nodebug-jsmin.js' %}"></script>
-        -->
-    <!-- Seiyria Bootstrap Slider -->
     <script src="{% static 'assets/vendor/bootstrap-slider/dist/bootstrap-slider.min.js' %}"></script>
 
-    <!-- Summernote 
-        <script src="{% static 'assets/vendor/summernote/dist/summernote-bs4.min.js' %}"></script>
-        -->
-    <!-- nK Share -->
     <script src="{% static 'assets/plugins/nk-share/nk-share.js' %}"></script>
 
     <!-- GoodGames -->

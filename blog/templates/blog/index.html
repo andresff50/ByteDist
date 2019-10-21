@@ -8,11 +8,11 @@
     <div class="nk-image-slider" data-autoplay="5000">
         {% for post in postslider %}
         <div class="nk-image-slider-item">
-            <img src="/media/{{ post.imageslider }}" alt="" class="nk-image-slider-img" data-thumb="/media/{{ post.imageslider }}">
+            <img src="/media/{{ post.imageslider }}" alt="Miniatura del post" class="nk-image-slider-img" data-thumb="/media/{{ post.imageslider }}" />
             <div class="nk-image-slider-content">
-                <h3 class="nk-post-title h4 h4-resp">
+                <h2 class="nk-post-title h4 h4-resp">
                     <a href="{{ post.get_post_detail_url }}">{{ post.title }}</a>
-                </h3>
+                </h2>
             </div>
         </div>
         {% endfor %}
@@ -38,7 +38,7 @@
                 <div class="nk-blog-post nk-blog-post-border-bottom">
                     <div class="contenedor-post wide-overlay" style="background:{{post.colorhexa}};">
                         <a href="{{ post.get_post_detail_url }}" class="nk-post-img2">
-                            <img class="banner1-img" src="/media/{{ post.image1 }}" alt="test">
+                            <img class="banner1-img" src="/media/{{ post.image1 }}" alt="Miniatura del post" />
                         </a>
                         <div class="text-encima">
                             <h2 class="nk-post-title h3">{{ post.title }}</h2>
@@ -101,7 +101,7 @@
                 <div class="col-lg-4">
                     <div class="nk-blog-post">
                         <a href="{{ pt4.get_post_detail_url }}" class="nk-post-img">
-                            <img style="max-height: 180px;" src="/media/{{ pt4.image1 }}" alt="h">
+                            <img style="max-height: 180px;" src="/media/{{ pt4.image1 }}" alt="Miniatura del post" />
                         </a>
                         <div class="nk-gap"></div>
                         <h2 class="nk-post-title h4"><a href="{{ pt4.get_post_detail_url }}">{{ pt4.title }}</a></h2>
@@ -131,7 +131,7 @@
                 <div class="col-lg-4">
                     <div class="nk-blog-post">
                         <a href="{{ vp4.get_video_detail_url }}" class="nk-post-img">
-                            <img style="max-height: 180px;" src="/media/{{ vp4.thumbnail }}" alt="W">
+                            <img style="max-height: 180px;" src="/media/{{ vp4.thumbnail }}" alt="Miniatura del video" />
                         </a>
                         <div class="nk-gap"></div>
                         <h2 class="nk-post-title h4"><a href="{{ vp4.get_video_detail_url }}">{{ vp4.title }}</a></h2>

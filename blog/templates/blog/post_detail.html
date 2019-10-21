@@ -6,13 +6,13 @@
     <!-- START: Post Text -->
     <div class="nk-gap-2"></div>
     <div class="nk-post-text mt-0">
-        <h1 class="nk-post-title h3">{{ post.title }}</h1>
+        <h2 class="nk-post-title h3">{{ post.title }}</h2>
         <div class="nk-post-date mt-10 mb-10">
             by <a href="#">{{ post.author }}</a> | <span class="fa fa-calendar"></span>{{ post.published_date|date:"d/m/y H:i" }}
         </div>
         <div class="nk-gap"></div>
         <div class="nk-post-img2">
-            <img src="/media/{{ post.image1 }}" alt="test">
+            <img src="/media/{{ post.image1 }}" alt="Miniatura del post" />
         </div>
         <p>{{ post.content|safe }}</p>
     </div>
@@ -28,7 +28,7 @@
         <div class="col-md-6">
             <div class="nk-widget-post">
                 <a href="{{ similarpost.get_post_detail_url }}" class="nk-post-image">
-                    <img style="object-fit: cover;" src="/media/{{ similarpost.image1 }}" alt="We found a witch! May we burn her?">
+                    <img style="object-fit: cover;" src="/media/{{ similarpost.image1 }}" alt="Miniatura del post" />
                 </a>
                 <h3 class="nk-post-title"><a href="{{ similarpost.get_post_detail_url }}">{{ similarpost.title }}</a></h3>
             </div>
