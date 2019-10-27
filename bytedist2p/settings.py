@@ -103,8 +103,8 @@ with open('/etc/secret_key.txt') as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-#ALLOWED_HOSTS = ['bytedist.com', '159.89.48.41', 'www.bytedist.com']
-ALLOWED_HOSTS = ['192.168.133.143', '127.0.0.1']
+ALLOWED_HOSTS = ['bytedist.com', '159.89.48.41', 'www.bytedist.com']
+#ALLOWED_HOSTS = ['192.168.133.143', '127.0.0.1']
 SITE_ID = 1
 
 #disqus
