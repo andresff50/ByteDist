@@ -30,9 +30,11 @@ CKEDITOR_UPLOAD_PATH = "uploads/"
 
 CKEDITOR_CONFIGS = {
     'default': {
+        'removePlugins': 'stylesheetparser',
+        'allowedContent': True,
         'skin': 'moono-lisa',
-        # 'skin': 'moono',
-        # 'skin': 'moono-lisa',
+        #'skin': 'moono',
+        #'skin': 'moono-lisa',
         'toolbar_Basic': [
             ['Source', '-', 'Bold', 'Italic']
         ],

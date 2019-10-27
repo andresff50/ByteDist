@@ -1,23 +1,86 @@
 {% extends 'sidebartemplate.html' %}
 {% block title %}bytedist | {{ post.title }}{% endblock %}
-{% block basecontent %}
+{% block head_css %}
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
+<meta property="og:url"           content="{{ request.get_full_path }}" />
+<meta property="og:type"          content="article" />
+<meta property="og:title"         content="{{ post.title }}" />
+<meta property="og:description"   content="{{ post.resumen }}" />
+<meta property="og:image"         content="https://off-zone.com/media/{{ post.image1 }}" />
+{% endblock %}
+
+{% block outofthebox %}
+<!--
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v3.3&appId=217345012139475&autoLogAppEvents=1"></script>
+-->
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) return;
+js = d.createElement(s); js.id = id;
+js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!-- START: Breadcrumbs -->
+<!--<div class="nk-gap-1"></div>
+<div class="container">
+    <ul class="nk-breadcrumbs">
+        <li><span>{{ post.title }}</span></li>
+    </ul>
+</div>-->
+<div class="nk-gap-1"></div>
+<!-- END: Breadcrumbs -->
+<!-- START: Post -->
+{% endblock %}
+
+{% block basecontent %}
 <div class="nk-blog-post nk-blog-post-single containermov">
     <!-- START: Post Text -->
     <div class="nk-gap-2"></div>
     <div class="nk-post-text mt-0">
         <h2 class="nk-post-title h3">{{ post.title }}</h2>
         <div class="nk-post-date mt-10 mb-10">
-            by <a href="#">{{ post.author }}</a> | <span class="fa fa-calendar"></span>{{ post.published_date|date:"d/m/y H:i" }}
+            <span class="fa fa-user-o"></span><a href="#">{{ post.author }}</a> | <span class="fa fa-calendar"></span>{{ post.published_date|date:"d/m/y H:i" }}
         </div>
         <div class="nk-gap"></div>
         <div class="nk-post-img2">
             <img src="/media/{{ post.image1 }}" alt="Miniatura del post" />
         </div>
         <p>{{ post.content|safe }}</p>
+
+        <!--Social share-->
+        <div class="nk-post">
+            <span class="h5">Compartir:</span>
+            <ul class="nk-social-links">
+                <div class="nk-gap-1"></div>
+                <li>
+                    <!-- Your share button code -->
+                    <div class="fb-share-button"
+                    style="border-radius: 0px;" 
+                    data-href="{{ request.get_full_path }}" 
+                    data-layout="button_count"
+                    data-size="large">
+                    </div>
+                </li>
+                <div class="nk-gap-1"></div>
+                <li style="margin-left: 58px;">
+                    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw"
+                        class="twitter-share-button" 
+                        data-size="large" 
+                        data-text="{{ post.title }}" 
+                        data-via="bytedist" 
+                        data-show-count="true">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--End Social share-->
     </div>
     <!-- END: Post Text -->
-    <div class="nk-gap"></div>
+    
     <!-- START: Comments -->
     <div class="nk-gap"></div>
     <!--Similar articules-->
